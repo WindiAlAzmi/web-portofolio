@@ -172,6 +172,7 @@ main #introduction h4 {
 
 .card__header__icon {
   width: 100%;
+  gap:10px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
