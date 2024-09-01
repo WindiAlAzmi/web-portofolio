@@ -25,17 +25,15 @@ a {
     text-decoration: none;
 }
 
-
 body {
     margin:0 auto;
     display: flex;
     flex-direction: row;
-    border:1px solid black;
     justify-content: center;
-    padding:80px 40px;
+    padding:80px 40px 20px 40px;
     background-color: var(--background-light);
     color: var(--text-light);
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: 'Plus Jakarta Sans';
     font-weight: 200;
 
@@ -43,7 +41,7 @@ body {
 }
 .container {
     width:55%;
-    border:1px solid black;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 
@@ -52,10 +50,6 @@ body {
 .btn { 
     background-color: red;
 }
-
-
-
-/* home  */
 
 
 header {
@@ -67,15 +61,12 @@ header {
 
 header nav {
     width:40%;
-   
-    border: 1px solid purple;
 }
 
 header nav ul{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 1px solid green;
 
 }
 
@@ -88,7 +79,6 @@ header nav ul li {
 
 #toggle__mode {
     width:30%;
-    border: 1px solid green;
     display: flex;
     justify-content: end;
     cursor: pointer;
@@ -101,17 +91,18 @@ header nav ul li {
 
 }
 
-section {
+main {
+    flex: 1;
     margin: 100px 0px;
 }
-section #introduction h3, h4 {
+main #introduction h3, h4 {
     font-weight: 300;
     line-height: 40px;
     font-size:40px;
 
 }
 
-section #introduction  h4 {
+main #introduction  h4 {
     font-weight: 200;
     line-height: 38px;
     font-style: italic;
@@ -122,20 +113,26 @@ section #introduction  h4 {
 }
 
 
-/* Portofolio Section  */
 #portofolio {
     margin-top:70px;
     display: flex;
     flex-direction: column;
-    gap:2px;
+    gap:5px;
+    width: 100%;
+
+}
+
+#portofolio a {
+    color: var(--text-light);
 
 }
 
 .portofolio__container {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-around;
+   justify-content: space-between;
    gap:20px;
+   display:grid;
+    grid-template-columns:auto auto auto;
+    width: 100%;
 }
 
 #portofolio h3 { 
@@ -144,14 +141,34 @@ section #introduction  h4 {
 }
 
 
+.portofolio__detail {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    gap:4px;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.portofolio__detail h4 {
+    font-size:14px;
+}
 
 
-/* card section  */
+
 
 #card {
   width:260px;
-  border:1px solid black;
-  padding:4px;
+  height:auto;
+  overflow: hidden;
+  gap:5px;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  border-radius: 20px;
+  padding:5px;
+
 }
 
 
@@ -165,8 +182,9 @@ section #introduction  h4 {
 
 #card .card__header h4 {
     font-weight:500;
-    font-size:18px;
+    font-size:14px;
     font-style: normal;
+
 }
 
 #card .card__header img  {
@@ -177,14 +195,27 @@ section #introduction  h4 {
 
 
 .card__header__icon {
-    border:1px solid black;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
-#card__img{
+.card__header__icon img {
+    width:24px;
+    height:24px;
+}
+.card__img{
+    width: 100%;
     border-radius: 10px;
+
 }
 
+#card__img__data {
+    width:100%;
+    border-radius: 10px;
 
+}
 
 #card .card__info h5 {
     font-size:14px;
@@ -193,21 +224,21 @@ section #introduction  h4 {
     font-weight: 400;
 }
 
+
+
 #card .card__info .card__button__container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border:1px solid red;
     width:100%;
     gap:10px;
     margin-top:10px;
+    justify-content: flex-start;
 }
-#card .card__info .card__button__container .card__button {
+#card .card__info .card__button__container .card__button_hastag {
     font-size:14px;
     line-height: 18px;
     padding:8px;
-    border:1px solid black;
-    max-width:60px;
     height:20px;
     font-weight: 600;
     color:var(--text-dark);
@@ -215,13 +246,113 @@ section #introduction  h4 {
     border-radius: 10px;
     text-align: center;
 }
-/* footer  */
+
+
+#blog {
+    margin-top:70px;
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    width: 100%;
+
+
+}
+
+#blog a {
+    color: var(--text-light);
+
+}
+
+.blog__container {
+   justify-content: flex-start;
+   gap:30px;
+   display:flex;
+   flex-direction: row;
+    width: 100%;
+
+
+}
+
+#blog h3 { 
+    font-size:22px;
+    font-weight: 400;
+}
+
+
+.blog__detail {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    gap:4px;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.blog__detail h4 {
+    font-size:14px;
+}
+
+
+#blog__data{
+    display: flex;
+    flex-direction: row;
+    gap:16px;
+    width:40%;
+}
+
+#blog__data img {
+    width:160px;
+    height:90px;
+    border-radius: 10px;
+}
+
+.blog__info{
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.blog__info h4 {
+    font-size:15px;
+    line-height: 15px;
+    font-weight:600;
+    width:80%;
+
+}
+
+
+.blog__info h5 {
+    font-size:12px;
+    font-weight:300;
+}
+
 
 footer {
-    height: 100px;
-    margin-top: 500px;
     display: flex;
     flex-direction: column;
     margin:0 auto;
-    background-color: border;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+
+footer h5{
+    font-size:12px;
+    font-weight:300;
+}
+
+
+footer img{
+    width:20px;
+    height:20px;
+}
+
+.socmed__icon {
+    display: flex;
+    flex-direction: row;
+    gap:14px;
 }
