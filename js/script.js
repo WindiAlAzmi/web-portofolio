@@ -41,7 +41,8 @@ const ChangeToBeDarkMode = () => {
     "github",
     "facebook",
     "instagram",
-    "card__header__icon__source__code"
+    "card__header__icon__source__code",
+    "card__header__icon__demo"
   ];
   dataIcon.forEach((item) => ChangeProcess(item));
 };
@@ -114,6 +115,13 @@ const processDataLightMode  = {
     Array.from(getListIconLight).forEach((tagIcon) => {
       tagIcon.src = `/assets/icons/socmed/github-light.png`;
     });  
+    let getDemoIcon = document.getElementsByClassName(
+      "card__header__icon__demo"
+    );
+    Array.from(getDemoIcon).forEach((tagIcon) => {
+      tagIcon.src = `/assets/icons/globe-light.png`;
+    });  
+
   },
   hastagPortofolio : () => {
     if(document.getElementsByClassName("card__button_hastag") !== null)  Array.from(document.getElementsByClassName("card__button_hastag")).forEach((hastagIconLight) => {
@@ -173,6 +181,13 @@ const processDataDarkMode  = {
     Array.from(getListIconDark).forEach((cardIcon) => {
       cardIcon.src = `/assets/icons/socmed/github-dark.png`;
     });
+
+    let getDemoIcon = document.getElementsByClassName(
+      "card__header__icon__demo"
+    );
+    Array.from(getDemoIcon).forEach((tagIcon) => {
+      tagIcon.src = `/assets/icons/globe-dark.png`;
+    }); 
   },
   hastagPortofolio : () => {
     if(document.getElementsByClassName("card__button_hastag") !== null) Array.from(document.getElementsByClassName("card__button_hastag")).forEach((hastagIcon) => {

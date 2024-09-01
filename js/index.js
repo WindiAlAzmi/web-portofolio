@@ -1,32 +1,33 @@
 const dataCard = [
   {
     id: "1",
-    title: "socket.io socket.io socket.io",
-    desc: "lorem ipsum",
-    image: "/assets/image/laptop.png",
-    "link-demo": "/https://github.com/WindiAlAzmi",
-    "link-source-code": "/https://github.com/WindiAlAzmi",
+    title: "furniture app",
+    desc: "landing page app",
+    image: "/assets/image/porto-1.png",
+    "link-demo": "https://test-nmw.netlify.app/",
+    "link-source-code": null,
     hastags: ["js", "react", "tailwindcss"],
   },
   {
     id: "2",
-    title: "change button in swift",
-    desc: "lorem ipsum",
-    image: "/assets/image/laptop.png",
-    "link-demo": "/https://github.com/WindiAlAzmi",
-    "link-source-code": "/https://github.com/WindiAlAzmi",
-    hastags: ["swift", "js", "react", "tailwindcss", "js", "react"],
+    title: "tasty goods",
+    desc: "recipe app",
+    image: "/assets/image/porto-2.png",
+    "link-demo": "https://tasty-goods.netlify.app/",
+    "link-source-code": null,
+    hastags: ["js", "web component" , "rest api"],
   },
   {
     id: "3",
-    title: "change button in swift",
-    desc: "lorem ipsum",
-    image: "/assets/image/laptop.png",
-    "link-demo": "/https://github.com/WindiAlAzmi",
-    "link-source-code": "/https://github.com/WindiAlAzmi",
-    hastags: ["swift"],
-  }
+    title: "tasty recipe",
+    desc: "recipe app",
+    image: "/assets/image/porto-3.png",
+    "link-demo": "https://tasty-recipes-windi.netlify.app/",
+    "link-source-code": null,
+    hastags: ["js", "web component" , "rest api"],
+  },
 ];
+
 
 const dataBlog = [
   {
@@ -66,7 +67,21 @@ dataCard.forEach((el) => {
     return tagBtn;
   };
 
+
+  const isLinkGithubThere = () => {
+    let linkGithub = "";
+    if(el["link-source-code"] !== null){
+      linkGithub = ` <a href="${el["link-source-code"]}" target="_blank" rel="noopener noreferrer">
+                          <img class="card__header__icon__source__code" src="/assets/icons/socmed/github-light.png" alt="sc-icon" width="40" height="40" />
+                      </a>`
+
+    }
+
+    return linkGithub;
+  }
+
   buildContainer.id = "card";
+
 
   buildContainer.innerHTML = `
                     <div class="card__header">
@@ -78,13 +93,17 @@ dataCard.forEach((el) => {
                         }" alt="img-card" width="240" height="150" />
                     </div>
                     <div class="card__info">
-                        <h5 class="card__info__text">website for tracke some money </h5>
+                        <h5 class="card__info__text">${el.desc} </h5>
                          <div class="card__button__container">
                          ${dataHastagLoop()}
                         </div>
                     </div>
                    <div class="card__header__icon">
-                      <img class="card__header__icon__source__code" src="/assets/icons/socmed/github-light.png" alt="sc-icon" width="40" height="40" />
+                      <a href="${el["link-demo"]}" target="_blank" rel="noopener noreferrer">
+                         <img class="card__header__icon__demo" src="/assets/icons/globe-light.png" alt="sc-icon" width="40" height="40" />
+                      </a>
+                      
+                      ${isLinkGithubThere()}
                     </div>
     `;
 

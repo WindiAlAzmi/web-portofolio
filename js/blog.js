@@ -15,22 +15,7 @@ const dataBlog = [
       date: "Agustus 22, 2024",
       writer: "windi",
     },
-    {
-        id: "1",
-        title: "socket.io socket.io socket.io",
-        desc: "lorem ipsum",
-        image: "/assets/image/laptop.png",
-        date: "Agustus 22, 2024",
-        writer: "windi",
-      },
-      {
-        id: "2",
-        title: "change button in swift",
-        desc: "lorem ipsum",
-        image: "/assets/image/laptop.png",
-        date: "Agustus 22, 2024",
-        writer: "windi",
-      }
+    
   ];
   
 // BLOG SECTION
