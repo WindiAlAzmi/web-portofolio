@@ -49,6 +49,7 @@ const ChangeToBeDarkMode = () => {
 const ChangeProcess = (icon) => {
   switch (getBody.className === "dark-mode") {
     case true:
+      processDataDarkMode.checkBMI();
       processDataDarkMode.localStorage();
       processDataDarkMode.navMobile();
       processDataDarkMode.btnMenu();
@@ -63,6 +64,7 @@ const ChangeProcess = (icon) => {
       break;
 
     case false:
+      processDataLightMode.checkBMI();
       processDataLightMode.localStorage();
       processDataLightMode.navMobile();
       processDataLightMode.btnMenu();
@@ -79,6 +81,10 @@ const ChangeProcess = (icon) => {
 };
 
 const processDataLightMode = {
+  checkBMI: () => {
+    if (document.getElementById("checkBMI__text") !== null)  document.getElementById("checkBMI__text").style.color = "#0a192f";
+    if(document.getElementById("checkBMI__img") !== null)  document.getElementById("checkBMI__img").src = `/assets/icons/arrow-light.png`;
+  }, 
   localStorage: () => {
     localStorage.setItem('colorMode', "light-mode");
   }, 
@@ -170,6 +176,10 @@ const processDataLightMode = {
 };
 
 const processDataDarkMode = {
+  checkBMI: () => {
+    if (document.getElementById("checkBMI__text") !== null)  document.getElementById("checkBMI__text").style.color = "#e6e6fa";
+    if(document.getElementById("checkBMI__img") !== null)  document.getElementById("checkBMI__img").src = `/assets/icons/arrow-dark.png`;
+  }, 
   localStorage: () => {
     localStorage.setItem('colorMode', "dark-mode");
   }, 
