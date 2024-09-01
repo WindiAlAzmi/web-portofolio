@@ -25,6 +25,8 @@ const ChangeToBeDarkMode = () => {
 const ChangeIcon = (icon) => {
   switch (getBody.className === "dark-mode") {
     case true:
+      processDataDarkMode.btnMode();
+      processDataDarkMode.navLink();
       processDataDarkMode.iconSocialMedia(icon);
       processDataDarkMode.iconPortofolio();
       processDataDarkMode.hastagPortofolio();
@@ -34,6 +36,8 @@ const ChangeIcon = (icon) => {
       break;
 
     case false:
+      processDataLightMode.btnMode();
+      processDataLightMode.navLink();
       processDataLightMode.iconSocialMedia(icon);
       processDataLightMode.iconPortofolio();
       processDataLightMode.hastagPortofolio();
@@ -41,11 +45,21 @@ const ChangeIcon = (icon) => {
       processDataLightMode.linkPortofolio();
       processDataLightMode.linkBlog();
       break;
+      
   }
 };
 
 
 const processDataLightMode  = {
+  btnMode : () => {
+    if(document.getElementById("btn-mode") !== null) document.getElementById("btn-mode").src = "/assets/icons/moon.png";
+  },
+  navLink : () => {
+    console.log(document.getElementsByClassName("linkNav"), 'ini data navlinkk');
+    if(document.getElementsByClassName("linkNav") !== null)  Array.from(document.getElementsByClassName("linkNav")).forEach((navData) => {
+      navData.style.color = "#0A192F";
+    });
+  },
   iconSocialMedia : (icon) => {
     let getIconDark = document.getElementById(`${icon}`);
     if(getIconDark !== null) getIconDark.src = `/assets/icons/socmed/${icon}-light.png`;
@@ -82,6 +96,15 @@ const processDataLightMode  = {
 
 
 const processDataDarkMode  = {
+  btnMode : () => {
+    if(document.getElementById("btn-mode") !== null) document.getElementById("btn-mode").src = "/assets/icons/sun.png";
+  },
+  navLink : () => {
+    console.log(document.getElementsByClassName("linkNav"), 'ini data navlinkk');
+    if(document.getElementsByClassName("linkNav") !== null)  Array.from(document.getElementsByClassName("linkNav")).forEach((navData) => {
+      navData.style.color = "#E6E6FA";
+    });
+  },
   iconSocialMedia : (icon) => {
     let getIconDark = document.getElementById(`${icon}`);
     if(getIconDark !== null) getIconDark.src = `/assets/icons/socmed/${icon}-dark.png`;

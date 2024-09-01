@@ -22,7 +22,9 @@
 
 
 a {
+    color: var(--text-light);
     text-decoration: none;
+    cursor: pointer;
 }
 
 body {
@@ -63,18 +65,17 @@ header nav {
     width:40%;
 }
 
-header nav ul{
+header nav #container__header {
     display:flex;
     flex-direction: row;
     justify-content: space-between;
 
 }
 
-header nav ul li {
+header nav  {
     list-style: none;
     font-weight: 600;
     font-size:18px;
-
 }
 
 #toggle__mode {
@@ -130,8 +131,9 @@ main #introduction  h4 {
 .portofolio__container {
    justify-content: space-between;
    gap:20px;
-   display:grid;
-    grid-template-columns:auto auto auto;
+   display:flex;
+   flex-direction: row;
+   flex-wrap: wrap;
     width: 100%;
 }
 
@@ -159,7 +161,8 @@ main #introduction  h4 {
 
 
 #card {
-  width:260px;
+  /* width:px; */
+  width:28%;
   height:auto;
   overflow: hidden;
   gap:5px;
@@ -268,6 +271,7 @@ main #introduction  h4 {
    gap:30px;
    display:flex;
    flex-direction: row;
+   flex-wrap: wrap;
     width: 100%;
 
 
@@ -299,6 +303,7 @@ main #introduction  h4 {
     flex-direction: row;
     gap:16px;
     width:40%;
+    cursor: pointer;
 }
 
 #blog__data img {
@@ -326,6 +331,15 @@ main #introduction  h4 {
 
 .blog__info h5 {
     font-size:12px;
+    font-weight:300;
+}
+
+
+
+.about__text {
+    margin-top:30px;
+    font-size:18px !important;
+    line-height:12px;
     font-weight:300;
 }
 

@@ -25,7 +25,7 @@ const dataCard = [
     "link-demo": "/https://github.com/WindiAlAzmi",
     "link-source-code": "/https://github.com/WindiAlAzmi",
     hastags: ["swift"],
-  },
+  }
 ];
 
 const dataBlog = [
@@ -52,6 +52,7 @@ const dataBlog = [
 let getContainerCard = document.getElementsByClassName(
   "portofolio__container"
 )[0];
+
 
 dataCard.forEach((el) => {
   const buildContainer = document.createElement("div");
