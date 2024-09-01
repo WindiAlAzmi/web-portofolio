@@ -1,11 +1,20 @@
-let getButtonMode = document.getElementById("btn-mode");
+//dom change, close nav 
+document.addEventListener('DOMContentLoaded', () =>  {
+  let getNavMobile = document.getElementById("container__header__mobile");
+  getNavMobile.style.display = "none";
+});
+
+
+let getButtonMode = document.getElementsByClassName("btn-mode");
 let getBody = document.getElementsByTagName("body")[0];
 let getMenuMobile = document.getElementById("btn-menu");
 let getCancel = document.getElementById("btn-cancel");
 
-getButtonMode.addEventListener("click", () => {
+
+Array.from(getButtonMode).forEach((el) => el.addEventListener("click", () => {
   ChangeToBeDarkMode();
-});
+}));
+
 
 getMenuMobile.addEventListener("click", () => {
     let getNavMobile = document.getElementById("container__header__mobile");
@@ -16,6 +25,8 @@ getCancel.addEventListener("click", () => {
   let getNavMobile = document.getElementById("container__header__mobile");
   getNavMobile.style.display = "none";
 })
+
+
 
 
 const ChangeToBeDarkMode = () => {
@@ -82,7 +93,9 @@ const processDataLightMode  = {
     if(document.getElementById("btn-menu") !== null) document.getElementById("btn-menu").src = "/assets/icons/menu-light.png";
   },
   btnMode : () => {
-    if(document.getElementById("btn-mode") !== null) document.getElementById("btn-mode").src = "/assets/icons/moon.png";
+    if(document.getElementsByClassName("btn-mode") !== null)  Array.from(document.getElementsByClassName("btn-mode")).forEach((el) => {
+      el.src = "/assets/icons/moon.png";
+    });
   },
   navLink : () => {
     console.log(document.getElementsByClassName("linkNav"), 'ini data navlinkk');
@@ -139,7 +152,9 @@ const processDataDarkMode  = {
     if(document.getElementById("btn-menu") !== null) document.getElementById("btn-menu").src = "/assets/icons/menu-dark.png";
   },
   btnMode : () => {
-    if(document.getElementById("btn-mode") !== null) document.getElementById("btn-mode").src = "/assets/icons/sun.png";
+    if(document.getElementsByClassName("btn-mode") !== null)  Array.from(document.getElementsByClassName("btn-mode")).forEach((el) => {
+      el.src = "/assets/icons/sun.png";
+    });
   },
   navLink : () => {
     console.log(document.getElementsByClassName("linkNav"), 'ini data navlinkk');

@@ -515,7 +515,7 @@ nav .btn-menu-mobile {
       .about__text {
         margin-top: 30px;
         font-size: 14px !important;
-        line-height: 10px;
+        line-height: 20px !important;
       }
 
   }
