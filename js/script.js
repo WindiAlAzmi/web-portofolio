@@ -1,9 +1,22 @@
 let getButtonMode = document.getElementById("btn-mode");
 let getBody = document.getElementsByTagName("body")[0];
+let getMenuMobile = document.getElementById("btn-menu");
+let getCancel = document.getElementById("btn-cancel");
 
 getButtonMode.addEventListener("click", () => {
   ChangeToBeDarkMode();
 });
+
+getMenuMobile.addEventListener("click", () => {
+    let getNavMobile = document.getElementById("container__header__mobile");
+    getNavMobile.style.display = "flex";
+})
+
+getCancel.addEventListener("click", () => {
+  let getNavMobile = document.getElementById("container__header__mobile");
+  getNavMobile.style.display = "none";
+})
+
 
 const ChangeToBeDarkMode = () => {
   // Change Body to be dark mode
@@ -19,12 +32,14 @@ const ChangeToBeDarkMode = () => {
     "instagram",
     "card__header__icon__source__code"
   ];
-  dataIcon.forEach((item) => ChangeIcon(item));
+  dataIcon.forEach((item) => ChangeProcess(item));
 };
 
-const ChangeIcon = (icon) => {
+const ChangeProcess = (icon) => {
   switch (getBody.className === "dark-mode") {
     case true:
+      processDataDarkMode.navMobile();
+      processDataDarkMode.btnMenu();
       processDataDarkMode.btnMode();
       processDataDarkMode.navLink();
       processDataDarkMode.iconSocialMedia(icon);
@@ -36,6 +51,8 @@ const ChangeIcon = (icon) => {
       break;
 
     case false:
+      processDataLightMode.navMobile();
+      processDataLightMode.btnMenu();
       processDataLightMode.btnMode();
       processDataLightMode.navLink();
       processDataLightMode.iconSocialMedia(icon);
@@ -51,6 +68,19 @@ const ChangeIcon = (icon) => {
 
 
 const processDataLightMode  = {
+  navMobile:() => {
+    if(document.getElementById("container__header__mobile") !== null) {
+      document.getElementById("container__header__mobile").style.backgroundColor = "#ffffff";
+      document.getElementById("container__header__mobile").style.color = "#0a192f";
+
+    }
+    if(document.getElementById("btn-cancel") !== null){
+      document.getElementById("btn-cancel").src = "/assets/icons/cancel-light.png";
+    }
+  }, 
+  btnMenu : () => {
+    if(document.getElementById("btn-menu") !== null) document.getElementById("btn-menu").src = "/assets/icons/menu-light.png";
+  },
   btnMode : () => {
     if(document.getElementById("btn-mode") !== null) document.getElementById("btn-mode").src = "/assets/icons/moon.png";
   },
@@ -96,6 +126,18 @@ const processDataLightMode  = {
 
 
 const processDataDarkMode  = {
+  navMobile:() => {
+    if(document.getElementById("container__header__mobile") !== null) {
+     document.getElementById("container__header__mobile").style.backgroundColor = "#0a192f";
+     document.getElementById("container__header__mobile").style.color = "#e6e6fa";
+    }
+    if(document.getElementById("btn-cancel") !== null){
+      document.getElementById("btn-cancel").src = "/assets/icons/cancel-dark.png";
+    }
+  }, 
+  btnMenu : () => {
+    if(document.getElementById("btn-menu") !== null) document.getElementById("btn-menu").src = "/assets/icons/menu-dark.png";
+  },
   btnMode : () => {
     if(document.getElementById("btn-mode") !== null) document.getElementById("btn-mode").src = "/assets/icons/sun.png";
   },
