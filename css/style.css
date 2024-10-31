@@ -121,8 +121,9 @@ main #introduction h4 {
 }
 
 .portofolio__container {
-  justify-content: space-between;
-  gap: 20px;
+  /* justify-content: space-between; */
+  justify-content:flex-start;
+  gap: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -154,7 +155,7 @@ main #introduction h4 {
   gap: 5px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start ;
   border-radius: 20px;
   padding: 5px;
 }
@@ -451,7 +452,8 @@ main #introduction h4 {
 
 .portofolio__container {
     gap: 14px;
-    justify-content: center;
+    /* justify-content: center; */
+    /* justify-content:flex-start; */
     align-items: center;
 }
 

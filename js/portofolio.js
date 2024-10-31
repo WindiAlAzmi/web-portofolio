@@ -70,6 +70,42 @@ const dataCard = [
       "rest api",
     ],
   },
+  {
+    id: "7",
+    title: "work - dashboard ecommerce nmw clinic  ",
+    desc: "web dashboard admin ",
+    image: "/assets/image/porto-7.png",
+    "link-demo": "https://beautique-classical.netlify.app/",
+    "link-source-code": "https://github.com/WindiAlAzmi/cart-react",
+    hastags: ["react js", "tailwind css", "axios"],
+  },
+  {
+    id: "8",
+    title: "bootcamp project - cart ecommerce  ",
+    desc: "cart with react js",
+    image: "/assets/image/porto-8.png",
+    "link-demo": "https://beautique-classical.netlify.app/",
+    "link-source-code": "https://github.com/WindiAlAzmi/cart-react",
+    hastags: ["react js", "tailwind css", "axios"],
+  },
+  {
+    id: "9",
+    title: "bootcamp project - body weight calculation ",
+    desc: "make with html",
+    image: "/assets/image/porto-9.png",
+    "link-demo": "https://web-bmi.netlify.app/",
+    "link-source-code": "https://github.com/WindiAlAzmi/web-body-mass-index",
+    hastags: ["html", "css"],
+  },
+  {
+    id: "10",
+    title: "bootcamp project - website beautypreneur",
+    desc: "for women to want makeup class",
+    image: "/assets/image/porto-10.png",
+    "link-demo": "https://beautypreneur-windi.netlify.app/",
+    "link-source-code": "https://github.com/WindiAlAzmi/short-story/",
+    hastags: ["react", "tailwind"],
+  },
 ];
 
 // PORTOFOLIO SECTION
